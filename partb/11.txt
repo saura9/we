@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myMap = new Map();
+const myObject = {};
+console.time("Map");
+for (let i = 0; i < 100000; i++) {
+  myMap.set("key_" + i, "value_" + i);
+  myMap.delete("key_" + i);
+
+}
+console.timeEnd("Map");
+//using object
+console.time("Object");
+for (let i = 0; i < 100000; i++) {
+  myObject["key_" + i] = "value_" + i;
+  delete myObject["key_" + i];
+}
+console.timeEnd("Object");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if (localStorage.getItem("visitorCount")) {
+            // If visitor count exists, increment it by 1
+            localStorage.setItem("visitorCount", parseInt(localStorage.getItem("visitorCount")) + 1);
+          } 
+          else {
+            // If visitor count doesn't exist, set it to 1
+            localStorage.setItem("visitorCount", 1);
+          }
+            
+            // Display the visitor count on the homepage
+            const visitorCount = localStorage.getItem("visitorCount");
+            const countElement = document.createElement("p");
+            countElement.textContent = "Number of Visitors: " + visitorCount;
+            document.body.appendChild(countElement);
+    </script>
+</body>
+</html>
